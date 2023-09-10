@@ -20,16 +20,55 @@ header{
 
 main{
     padding: 2rem 2rem;
+    margin-bottom: 0;
 }
+
+/* Your div and its content */
+.yourorder{
+    padding: 0 2rem;
+}
+.yourorder h4{
+    text-align: center;
+    margin-top: 0;
+}
+
+.item-of-order{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.item-of-order-name{
+    display: flex;
+    align-items: center;
+}
+
+.item-of-order-name p{
+    margin-left: 0.3rem;
+}
+.total-price{
+    border-top: 1px solid #393333;
+    margin-top: 1rem;
+}
+
+button{
+    border: none;
+    width: 100%;
+    background-color: #16DB99;
+    color: #FFFFFF;
+    height: 2.5rem;
+}
+
 .emoji{
-    font-size: 3.5rem;
+    font-size: 4.5rem;
+    
 }
-section{
+.a-section{
     display: flex;
     margin-bottom: 1rem;
     border-bottom: 1px solid #8B8B8B;
     width: 100%;
     padding-right: 0.55rem;
+    align-items: center;
 }
 
 .descriptions{
@@ -69,6 +108,6 @@ h2,p,h3{
     text-shadow:  1px 0px #5a0307;
 }
 
-.ingredients{
+.ingredients, .item-of-order-name p{
     color: #8B8B8B;
 }

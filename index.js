@@ -2,7 +2,7 @@ import { menuArray } from "./data.js";
 
 /* consts html elemens */
 const mainEl = document.querySelector('#main-app')
-
+// document.getElementById('shadow-host-companion').style.border = 'none'
 
 
 function getAppHtml(){
@@ -10,13 +10,13 @@ function getAppHtml(){
     html = menuArray.map(item=>{
         const ingredients = item.ingredients.join(', ')
 
-        return `<section>
-                    <div class="emoji">
+        return `<div class='a-section'>
+                    <p class="emoji">
                         ${item.emoji}
-                    </div>
+                    </p>
                     <div class="descriptions">
                         <div>
-                            <h2>${item.name}</h2>
+                            <h3>${item.name}</h3>
                             <p class="ingredients">${ingredients}</p>
                             <h3>$${item.price}</h3>
                         </div>
@@ -25,7 +25,7 @@ function getAppHtml(){
                             <p class="add-minus">-</p>
                         </div>
                     </div>
-                </section>`
+                </div>`
     }).join('')
 
     return html
