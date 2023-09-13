@@ -18,32 +18,34 @@
             <main class="app-main" id="main-app">
                 
             </main>
-            <div class="yourorder hiding">
+            <div class="yourorder hiding" id="ordered-items">
                 <h4 class="yourorderh4">Your order</h4>
                 <div>
-                    <div class="item-of-order">
-                        <div class="item-of-order-name">
-                            <h3>Pizza</h3>
-                            <p>remove</p>
-                        </div>
-                        <p>$14</p>
+                    <div class="item-of-order" id="pizza-item">
+                        
+                    </div>
+                    <div class="item-of-order" id="burger-item">
+                        
+                    </div>
+                    <div class="item-of-order" id="shake-item">
+                        
                     </div>
                     <div class="item-of-order total-price">
                         <div class="item-of-order-name">
                             <h3>Total Price:</h3>
                         </div>
-                        <p>$14</p>
+                        <p id="price-total"></p>
                     </div>
                 </div>
-                <button>Complete order</button>
+                <button data-complete="complete" id="complete-order">Complete order</button>
             </div>
             <div class="form-container hiding">
-                <form action="">
+                <form action="" id="payment-form">
                     <p class="form-headind">Enter card details</p>
                     <input  required "text" name="" id="" placeholder="Enter your name">
                     <input  required "text" name="" id="" placeholder="Enter card number">
                     <input  required "text" name="" id="" placeholder="Enter CVV">
-                    <button>Pay</button>
+                    <button type="submit">Pay</button>
                 </form>
             </div>
         </div>

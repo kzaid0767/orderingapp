@@ -2,6 +2,12 @@ import { menuArray } from "./data.js";
 
 /* consts html elemens */
 const mainEl = document.querySelector('#main-app')
+const orderedItemsEl = document.querySelector('#ordered-items')
+const pizzaItem = document.querySelector('#pizza-item')
+const burgerItem = document.querySelector('#burger-item')
+const shakeItem = document.querySelector('#shake-item')
+const totalPriceEl = document.querySelector('#price-total')
+const completeOrderBtn = document.querySelector('#complete-order')
 
 /* item ordered count */
 
@@ -12,10 +18,23 @@ let totalCount = pizzaCount + burgerCount + shakeCount
 
 document.addEventListener('click', handleClick)
 
+/* Displaying and showing orderd items div */
+
+
 function handleClick(e){
     if(e.target.dataset.add || e.target.dataset.minus){
         changeItemCount(e.target.dataset)
+    } else if(e.target.dataset.remove){
+        removeItem(e.target.dataset.remove)
+    } else if (e.target.dataset.complete){
+            completeOrder()
     }
+}
+
+/* complete order and pay */
+
+function completeOrder(){
+    console.log('reached')
 }
 
 /* handling adding, subtracting, removing */
@@ -37,11 +56,68 @@ function changeItemCount(value) {
         } else if(id===1){
             burgerCount > 0? burgerCount-- :0
         } else {
-            shakeCount > 0 ? shakeCount-- : 0
+            shakeCount >0 ? shakeCount-- : 0
         }
     }
 
+    totalCount = pizzaCount + burgerCount + shakeCount
     
+    if(totalCount){
+        orderedItemsEl.classList.remove('hiding')
+    } else orderedItemsEl.classList.add('hiding')
+
+    showOrderedItems()
+}
+
+function removeItem(value){
+    if(value==='pizza'){
+        pizzaCount=0
+    } else if(value==='burger'){
+        burgerCount=0
+    } else shakeCount=0
+    if(pizzaCount===burgerCount && burgerCount===shakeCount && shakeCount===0){
+        orderedItemsEl.classList.add('hiding')
+    }
+    console.log(totalCount)
+    showOrderedItems()
+}
+
+function showOrderedItems(){
+    if(pizzaCount>0){
+        let pizzahtml = `
+            <div class="item-of-order-name">
+                <h3>Pizza</h3>
+                <p data-remove="pizza">remove</p>
+            </div>
+            <p>$${14*pizzaCount}</p>
+        `
+        pizzaItem.innerHTML = pizzahtml
+    } else pizzaItem.innerHTML = ''
+    if(burgerCount>0){
+        let burgerhtml = `
+            <div class="item-of-order-name">
+                <h3>Hamburger</h3>
+                <p data-remove="burger">remove</p>
+            </div>
+            <p>$${12*burgerCount}</p>
+        `
+        burgerItem.innerHTML = burgerhtml
+    } else burgerItem.innerHTML =''
+
+    if(shakeCount>0){
+        let shakehtml = `
+            <div class="item-of-order-name">
+                <h3>Shake</h3>
+                <p data-remove="shake">remove</p>
+            </div>
+            <p>$${7*shakeCount}</p>
+        `
+        shakeItem.innerHTML = shakehtml
+    } else shakeItem.innerHTML =''
+
+    if(totalCount>0){
+        totalPriceEl.textContent = `$${pizzaCount*14+burgerCount*12+shakeCount*7}`
+    }
 }
 
 

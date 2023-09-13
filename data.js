@@ -16,7 +16,7 @@ export const menuArray = [
     {
         name: "Shake",
         ingredients: ["milk, fruit, yeast, juice"],
-        price: 12,
+        price: 7,
         emoji: "🥤",
         id: 2
     }
