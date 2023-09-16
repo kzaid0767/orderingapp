@@ -47,8 +47,21 @@
                 <form action="" id="payment-form">
                     <p class="form-headind">Enter card details</p>
                     <input  required type="text" name="name" id="name" placeholder="Enter your name">
-                    <input  required type="number" name="cardnumber" id="cardnumber" placeholder="Enter card number">
-                    <input  required type="number" name="cvv"  id="cvv" placeholder="Enter CVV">
+                    <input  required 
+                        name="cardnumber" 
+                        id="cardnumber"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" 
+                        minlength="10"
+                        maxlength="10"
+                        placeholder="Enter card number">
+                    <input  
+                        required 
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" 
+                        name="cvv"
+                        minlength="3"
+                        maxlength="3"  
+                        id="cvv" 
+                        placeholder="Enter CVV">
                     <button type="submit" id="pay-submit">Pay</button>
                     <button type="reset" id="cancel">Cancel</button>
                 </form>
