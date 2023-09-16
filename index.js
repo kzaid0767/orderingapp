@@ -10,6 +10,7 @@ const totalPriceEl = document.querySelector('#price-total')
 const paymentDiv = document.querySelector('#payment-div')
 const paymentForm = document.querySelector('#payment-form')
 const thankyouEl = document.querySelector('#thank-you-div')
+const cancelButton = document.querySelector('#cancel')
 
 /* item ordered count */
 
@@ -18,11 +19,13 @@ let burgerCount = 0
 let shakeCount = 0
 let totalCount = pizzaCount + burgerCount + shakeCount
 
+/* adding event listeners */
 document.addEventListener('click', handleClick)
 paymentForm.addEventListener('submit', handlePayment)
+cancelButton.addEventListener('click', cancelPayment)
+
 
 /* Displaying and showing orderd items div */
-
 
 function handleClick(e){
     if(e.target.dataset.add || e.target.dataset.minus){
@@ -40,7 +43,7 @@ function completeOrder(){
     paymentDiv.classList.remove('hiding')
 }
 
-/* payment form submit */
+/* payment form submit and cancel*/
 function handlePayment(e){
     e.preventDefault()
     
@@ -51,10 +54,18 @@ function handlePayment(e){
     reset()
 }
 
+function cancelPayment(){
+    paymentDiv.classList.add('hiding')
+}
+
+
 function reset(){
     thankyouEl.classList.remove('hiding')
     paymentForm.reset()
-    
+    pizzaCount=0
+    shakeCount=0
+    burgerCount=0
+    orderedItemsEl.classList.add('hiding')
 }
 
 /* handling adding, subtracting, removing */
@@ -83,6 +94,7 @@ function changeItemCount(value) {
     totalCount = pizzaCount + burgerCount + shakeCount
     
     if(totalCount){
+        thankyouEl.classList.add('hiding')
         orderedItemsEl.classList.remove('hiding')
     } else orderedItemsEl.classList.add('hiding')
 
@@ -98,7 +110,6 @@ function removeItem(value){
     if(pizzaCount===burgerCount && burgerCount===shakeCount && shakeCount===0){
         orderedItemsEl.classList.add('hiding')
     }
-    console.log(totalCount)
     showOrderedItems()
 }
 
