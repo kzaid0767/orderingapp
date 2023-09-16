@@ -39,14 +39,19 @@
                 </div>
                 <button data-complete="complete" id="complete-order">Complete order</button>
             </div>
-            <div class="form-container hiding">
+            <div class="form-container hiding" id="payment-div">
                 <form action="" id="payment-form">
                     <p class="form-headind">Enter card details</p>
-                    <input  required "text" name="" id="" placeholder="Enter your name">
-                    <input  required "text" name="" id="" placeholder="Enter card number">
-                    <input  required "text" name="" id="" placeholder="Enter CVV">
-                    <button type="submit">Pay</button>
+                    <input  required type="text" name="name" id="name" placeholder="Enter your name">
+                    <input  required type="number" name="cardnumber" id="cardnumber" placeholder="Enter card number">
+                    <input  required type="number" name="cvv"  id="cvv" placeholder="Enter CVV">
+                    <button type="submit" id="pay-submit">Pay</button>
+                    <button type="reset" id="cancel">Cancel</button>
                 </form>
+                
+            </div>
+            <div class="thank-you hiding" id="thank-you-div">
+                
             </div>
         </div>
         <script type="module" src="index.js"></script>

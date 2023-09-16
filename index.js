@@ -7,7 +7,9 @@ const pizzaItem = document.querySelector('#pizza-item')
 const burgerItem = document.querySelector('#burger-item')
 const shakeItem = document.querySelector('#shake-item')
 const totalPriceEl = document.querySelector('#price-total')
-const completeOrderBtn = document.querySelector('#complete-order')
+const paymentDiv = document.querySelector('#payment-div')
+const paymentForm = document.querySelector('#payment-form')
+const thankyouEl = document.querySelector('#thank-you-div')
 
 /* item ordered count */
 
@@ -17,6 +19,7 @@ let shakeCount = 0
 let totalCount = pizzaCount + burgerCount + shakeCount
 
 document.addEventListener('click', handleClick)
+paymentForm.addEventListener('submit', handlePayment)
 
 /* Displaying and showing orderd items div */
 
@@ -34,7 +37,24 @@ function handleClick(e){
 /* complete order and pay */
 
 function completeOrder(){
-    console.log('reached')
+    paymentDiv.classList.remove('hiding')
+}
+
+/* payment form submit */
+function handlePayment(e){
+    e.preventDefault()
+    
+    const userData = new FormData(paymentForm)
+    const name = (userData.get('name'))
+    thankyouEl.innerHTML = `<h3>Thank, ${name}! Your order is on its way!</h3>`
+    paymentDiv.classList.add('hiding')
+    reset()
+}
+
+function reset(){
+    thankyouEl.classList.remove('hiding')
+    paymentForm.reset()
+    
 }
 
 /* handling adding, subtracting, removing */

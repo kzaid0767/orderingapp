@@ -23,12 +23,25 @@ header{
     padding:1rem 2rem ;
 }
 
-main, .form-container{
+main, .form-container, .thank-you{
     padding: 2rem 2rem 0;
     margin-bottom: 0;
 }
 
 /* Your div and its content */
+.thank-you{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #ECFDF5;
+    height: 5rem;
+    color: #065F46;
+    width:90%;
+    margin: 0 auto;
+}
+.thank-you h3{
+    margin: 0;
+}
 .yourorder{
     padding: 0 2rem;
 }
@@ -63,12 +76,19 @@ button{
     height: 2.5rem;
     border-radius: 3px;
 }
-
+/* cancel button */
+#cancel{
+    margin-top: 5px;
+}
 /* payment form */
 .form-container{
     position: absolute;
     top: 15vh;
-    /* max-width: 70vw; */
+    right: 0%;
+    width: 50vw;
+    min-width: 295px;
+    margin: auto;
+    
 }
 form{
     background-color: #FFFFFF;
