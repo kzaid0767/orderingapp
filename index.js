@@ -49,7 +49,7 @@ function handlePayment(e){
     
     const userData = new FormData(paymentForm)
     const name = (userData.get('name'))
-    thankyouEl.innerHTML = `<h3>Thank, ${name}! Your order is on its way!</h3>`
+    thankyouEl.innerHTML = `<h3>Thanks, ${name}! Your order is on its way!</h3>`
     paymentDiv.classList.add('hiding')
     reset()
 }
