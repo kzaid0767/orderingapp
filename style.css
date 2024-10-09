@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "Smythe", system-ui;
+}
+/* Header styles */
+header{
+    background-image: url(./image.png);
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    padding: 2rem ;
+}
+
+.title-text{
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: lighter;
+}
