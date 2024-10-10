@@ -7,15 +7,71 @@ body{
 }
 /* Header styles */
 header{
-    background-image: url(./image.png);
+    background-image: url(./images/image.png);
     background-size: cover;
     background-position: center;
     color: #FFFFFF;
     padding: 2rem ;
+    min-width: 326px;
 }
 
 .title-text{
     margin: 0;
     letter-spacing: 2px;
     font-weight: lighter;
+    text-shadow: 1px 1px 0px #3d0808;
+}
+/* Main part */
+.main-part{
+    padding: 1rem 2rem;
+}
+/* Designs for each item */
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    border-bottom: 1px solid #D2D2D2;
+    margin-top: 1rem;
+}
+
+.food-title{
+    margin: 0;
+    color: black;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+} 
+.ingredients{
+    color: #8B8B8B;
+    margin: 0.1rem 0;
+    letter-spacing: 1.5px;
+}
+
+.icon{
+    font-size: 3.5rem;
+    display: flex;
+    margin: 0 auto 0 0;
+}
+
+.price{
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: black;
+    letter-spacing: 1.5px;
+}
+
+.plus-btn{
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    color: #3C3C3C;
+    background-color: #FFFFFF;
+    border: 1.5px solid #DEDEDE;
+    border-radius: 50%;
+
+}
+
+.item-left{
+    display: flex;
+    align-items: flex-start;
 }
