@@ -5,6 +5,7 @@ const mainSecttion = document.getElementById('main-part')
 let pizzaCount = 0
 let burgerCount = 0
 let drinkCount = 0
+let totalCount = pizzaCount+burgerCount+drinkCount
 
 // Even listener
 

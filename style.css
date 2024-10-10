@@ -22,7 +22,12 @@ header{
     text-shadow: 1px 1px 0px #3d0808;
 }
 /* Main part */
-.main-part{
+main{
+    max-width: 700px;
+    margin: auto;
+}
+.main-part,
+.order-part{
     padding: 1rem 2rem;
 }
 /* Designs for each item */
@@ -68,10 +73,73 @@ header{
     background-color: #FFFFFF;
     border: 1.5px solid #DEDEDE;
     border-radius: 50%;
+    cursor: pointer;
+    margin-left: 0.25rem;
 
 }
 
 .item-left{
     display: flex;
     align-items: flex-start;
+}
+
+/* Your order section */
+.order-part{
+    display: flex;
+    flex-direction: column;
+}
+.your-order{
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+    align-self: center;
+}
+
+.ordered-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ordered-item-left{
+    display: flex;
+    align-items: center;
+}
+.ordered-item-name{
+    font-weight: lighter;
+    margin: 0;
+
+}
+
+.remove{
+    color: #8B8B8B;
+    margin:0 0 0 0.3rem;
+    letter-spacing: 1.5px;
+}
+
+.remove:hover{
+    cursor: pointer;
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1.5px solid #393333;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.customer-price{
+    font-weight: lighter;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+.complete-order-btn{
+    background-color: #16DB99;
+    width: 100%;
+    color: #FFFFFF;
+    height: 3.5rem;
+    font-size: 1.25rem;
+    border: none;
+    font-weight: bold;
+
 }
