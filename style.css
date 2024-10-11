@@ -76,7 +76,9 @@ main{
     border-radius: 50%;
     cursor: pointer;
     margin-left: 0.25rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .item-left{
