@@ -111,6 +111,12 @@ function renderOrder(obj){
     } else {
         totalPrice.textContent = ``
         orderSection.classList.add('order-part-show')
+        orderedPizza.classList.add('show-pizza')
+        pizzaCost.textContent = ``
+        orderedBurger.classList.add('show-burger')
+        burgerCost.textContent = ``
+        orderedDrink.classList.add('show-drink')
+        drinkCost.textContent = ``
     }
 }
 
