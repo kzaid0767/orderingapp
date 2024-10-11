@@ -18,37 +18,45 @@
         <section class="main-part" id="main-part">
             
         </section>
-        <section class="order-part">
+        <section class="order-part order-part-show" id="order-part" >
+            
             <h2 class="your-order">Your Order</h2>
-            <div class="ordered-item">
+            <div class="ordered-item show-pizza" id="ordered-pizza">
                 <div class="ordered-item-left">
                     <h3 class="ordered-item-name">Pizza</h3>
-                    <p class="remove" data-remove="Pizza">remove</p>
+                    <p class="remove" data-remove="pizza">remove</p>
                 </div>
-                <h3 class="customer-price">$14</h3>
+                <h3 class="customer-price" id="pizza-cost"></h3>
             </div>
-            <div class="ordered-item">
+            <div class="ordered-item show-burger" id="ordered-burger">
                 <div class="ordered-item-left">
                     <h3 class="ordered-item-name">Hamburger</h3>
                     <p class="remove" data-remove="hamburger">remove</p>
                 </div>
-                <h3 class="customer-price">$14</h3>
+                <h3 class="customer-price" id="burger-cost"></h3>
             </div>
-            <div class="ordered-item">
+            <div class="ordered-item show-drink" id="ordered-drink">
                 <div class="ordered-item-left">
                     <h3 class="ordered-item-name">Drink</h3>
                     <p class="remove" data-remove="drink">remove</p>
                 </div>
-                <h3 class="customer-price">$12</h3>
+                <h3 class="customer-price" id="drink-cost">$12</h3>
             </div>
             <div class="total-price">
                 <h3 class="customer-price">Total price:</h3>
-                <h3 class="customer-price" id="customer-price">$8</h3>
+                <h3 class="customer-price" id="customer-price"></h3>
             </div>
             <button class="complete-order-btn" id="complete-order">Complete Order</button>
         </section>
     </main>
-    
+        <form class="show-form" hidden id="pay-form">
+            <h3>Enter card details</h3>
+            <input class="input-info" type="text" id="name" required placeholder="Enter your name"/>
+            <input class="input-info" type="number" id="number" required placeholder="Enter card number" minlength="10"  maxlength="10"/>
+            <input class="input-info" type="number" minlength=3 maxlength=3 placeholder="XXX" required>
+            <button class="pay-btn">Pay</button>
+            <span class="pay-btn cancel" id="cancel">Cancel</span>
+        </form>
     <script type="module" src="./index.js"></script>
 </body>
 </html>
