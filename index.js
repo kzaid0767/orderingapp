@@ -92,6 +92,7 @@ function handleRemove(data){
 // Showing items ordered
 function renderOrder(obj){
     if(obj.pizzaCount|| obj.burgerCount || obj.drinkCount){
+        lastSection.classList.add('last-section-show')
         orderSection.classList.remove('order-part-show')
         if(obj.pizzaCount){
             orderedPizza.classList.remove('show-pizza')
