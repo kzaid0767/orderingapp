@@ -48,15 +48,23 @@
             </div>
             <button class="complete-order-btn" id="complete-order">Complete Order</button>
         </section>
+        <section class="last-section last-section-show" id="last-section">
+            Thank,! Your order is on its way!!
+        </section>
     </main>
         <form class="show-form" hidden id="pay-form">
             <h3>Enter card details</h3>
-            <input class="input-info" type="text" id="name" required placeholder="Enter your name"/>
-            <input class="input-info" type="number" id="number" required placeholder="Enter card number" minlength="10"  maxlength="10"/>
-            <input class="input-info" type="number" minlength=3 maxlength=3 placeholder="XXX" required>
+            <input class="input-info" name="name" 
+                type="text" id="name" required placeholder="Enter your name"/>
+            <input class="input-info" name="cardnumber" type="number" id="number" required 
+                placeholder="Enter card number"  maxlength="10"
+                oninput="this.value=this.value.slice(0,this.maxLength)"/>
+            <input class="input-info" name="cvv" type="number" oninput="this.value=this.value.slice(0,this.maxLength)"
+                maxlength="3" placeholder="XXX" required>
             <button class="pay-btn">Pay</button>
             <span class="pay-btn cancel" id="cancel">Cancel</span>
         </form>
+        
     <script type="module" src="./index.js"></script>
 </body>
 </html>

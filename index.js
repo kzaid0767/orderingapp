@@ -2,6 +2,7 @@ import { menuArray } from "./data.js";
 
 const mainSection = document.getElementById('main-part')
 const orderSection = document.getElementById('order-part')
+const lastSection = document.getElementById('last-section')
 const totalPrice = document.getElementById('customer-price')
 const orderedPizza = document.getElementById('ordered-pizza')
 const pizzaCost = document.getElementById('pizza-cost')
@@ -25,8 +26,33 @@ let drinkCount = 0
 
 
 //hiding and showing payment form
-cancelForm.addEventListener('click', ()=>payForm.classList.add('show-form'))
+cancelForm.addEventListener('click', ()=>{
+    payForm.reset()
+    payForm.classList.add('show-form')
+
+})
 completeOrder.addEventListener('click', ()=>payForm.classList.remove('show-form'))
+
+//Payment form submission
+payForm.addEventListener('submit',handleSubmit)
+
+function handleSubmit(e){
+    e.preventDefault()
+    const userData = new FormData(payForm)
+    const name = userData.get('name')
+    const cardNumber = userData.get('cardnumber')
+    const cvv = userData.get('cvv')
+
+    lastSection.textContent = `Thanks ${name},! Your order is on its way!!`
+    lastSection.classList.remove('last-section-show')
+    payForm.reset()
+    payForm.classList.add('show-form')
+    pizzaCount=0
+    burgerCount=0
+    drinkCount=0
+    renderOrder({pizzaCount,burgerCount,drinkCount})
+
+}
 
 // Even listener
 
@@ -39,14 +65,12 @@ function handleClick(e) {
     }
     if(id===1){
         ++pizzaCount
-        renderOrder({pizzaCount,burgerCount,drinkCount})
     } else if (id===2){
         ++burgerCount
-        renderOrder({pizzaCount,burgerCount,drinkCount})
     } else if (id===3){
         ++drinkCount
-        renderOrder({pizzaCount,burgerCount,drinkCount})
     }
+    renderOrder({pizzaCount,burgerCount,drinkCount})
 
 }
 //handles removes
